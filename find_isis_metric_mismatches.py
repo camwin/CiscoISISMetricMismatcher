@@ -21,14 +21,14 @@ for router_a in list_of_isis_routers:
     router_a_hostname = router_a[0]
     router_a_metric_level1 = router_a[3]
     router_a_metric_level2 = router_a[4]
-    #print(router_a_hostname)
-    #print("Neighbor: " + router_a[2])
-    #print(router_a_metric_level1)
-    #print(router_a_metric_level2)
+    # print(router_a_hostname)
+    # print("Neighbor: " + router_a[2])
+    # print(router_a_metric_level1)
+    # print(router_a_metric_level2)
+ 
 
     for router_b in list_of_isis_routers:
-        if router_b[2] == router_a_hostname and router_b[0] == router_a[3]:
-            print("Comparing " + router_a_hostname + " to neighbor " + router_b[2])
+        if router_b[2] == router_a_hostname and router_b[0] == router_a[2]:
             if router_a_metric_level1 == router_b[3]:
                 if router_a_metric_level2 == router_b[4]:
                     continue
