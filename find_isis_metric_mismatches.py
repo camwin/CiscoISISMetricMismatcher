@@ -19,8 +19,14 @@ with open('isis_metric_audit.csv', 'r') as read_obj:
 # For each line in the CSV, find router_a's ISIS neighbor line and compare the metrics, alerting on mismatch.
 for router_a in list_of_isis_routers:
     router_a_hostname = router_a[0]
+    router_a_neighbor_interface = router_a[1]
     router_a_metric_level1 = router_a[3]
     router_a_metric_level2 = router_a[4]
+    # print(router_a_hostname)
+    # print("Neighbor: " + router_a[2])
+    # print(router_a_metric_level1)
+    # print(router_a_metric_level2)
+ 
 
     for router_b in list_of_isis_routers:
         if router_b[2] == router_a_hostname and router_b[0] == router_a[2]:
@@ -28,6 +34,6 @@ for router_a in list_of_isis_routers:
                 if router_a_metric_level2 == router_b[4]:
                     continue
                 else: 
-                    print(router_a_hostname + " " + router_a_metric_level1 + " " + router_a_metric_level2 + " metric mismatch with neighbor " + router_b[0] + " " + router_b[3] + " " + router_b[4])
+                    print(router_a_hostname + " " + router_a_neighbor_interface + " " + router_a_metric_level1 + " " + router_a_metric_level2 + " metric mismatch with neighbor " + router_b[0] + " " + router_b[1] + " " + router_b[3] + " " + router_b[4])
             else:
-                print(router_a_hostname + " " + router_a_metric_level1 + " " + router_a_metric_level2 + " metric mismatch with neighbor " + router_b[0] + " " + router_b[3] + " " + router_b[4])
+                print(router_a_hostname + " " + router_a_neighbor_interface + " " + router_a_metric_level1 + " " + router_a_metric_level2 + " metric mismatch with neighbor " + router_b[0] + " " + router_b[1] + " " + router_b[3] + " " + router_b[4])
