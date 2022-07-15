@@ -39,10 +39,10 @@ for device in nb_lr_devicelist:
 print(all_routers_list)
 
 
-# The expected heading for the import process in PyATS CSV->Yaml Generator 
+#The expected heading for the import process in PyATS CSV->Yaml Generator 
 netbox_import_template_heading = ['hostname', 'ip', 'username', 'password', 'protocol','os']
 
-# (Over)Write the compiled dictionary to a CSV called all_br_lr_netbox.csv 
+#(Over)Write the compiled dictionary to a CSV called all_br_lr_netbox.csv 
 with open('all_br_lr_netbox.csv', 'w') as f: 
     write = csv.writer(f) 
     write.writerow(netbox_import_template_heading) 
