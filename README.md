@@ -1,6 +1,8 @@
 # CiscoISISMetricMismatcher
 PyATS script to find Cisco ISIS Router Neighborship Metric Mismatches 
 
+From my blog post on this process: https://chefwear.wordpress.com/2022/07/14/network-automation-project-isis-metric-mismatch-finder/
+
 Step 1: Get list of devices to audit from Netbox
 I like Netbox because its so easy to use but also I am so used to it.
 
